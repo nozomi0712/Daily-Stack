@@ -1,0 +1,78 @@
+.show__left
+  .user__profile
+    .user__profile__title
+      プロフィール
+    .user__profile__contents
+      .user__profile__contents__image
+        = image_tag @profile.image, class: "profile__image"
+      .user__profile__contents__wrapper
+        .nickname.tag
+          .nickname__title.title
+            ニックネーム
+          .nickname__answer
+            = @user.nickname
+        .created.tag
+          .created__title.title
+            登録日
+          .created__answer
+            = @user.created_at.strftime("%Y-%m-%d %H:%M")
+        .grade.tag
+          .grade__title.title
+            学年
+          .grade__answer
+            = @profile.grade
+        .prefecture.tag
+          .prefecture__title.title
+            都道府県
+          .prefecture__answer
+            = @profile.prefecture
+        .youtuber.tag
+          .youtuber__title.title
+            好きなyoutuber
+          .youtuber__answer
+            = @profile.li_youtuber
+        .food.tag
+          .food__title.title
+            好きな食べ物
+          .food__answer
+            = @profile.li_food
+        .subject.tag
+          .subject__title.title
+            好きなアニメ
+          .subject__answer
+            = @profile.li_anime
+        .book.tag
+          .book__title.title
+            好きな本
+          .book__answer
+            = @profile.li_book
+        .subject.tag
+          .subject__title.title
+            力を入れて勉強していること
+          .subject__answer
+            = @profile.li_subject
+        .custom.tag
+          .custom__title.title
+            毎日の習慣
+          .cistom__answer
+            = @profile.custom
+        .lesson.tag
+          .lesson__title.title
+            習いごと
+          .lesson__answer
+            = @profile.lessons
+        .dream.tag
+          .dream__title.title
+            将来の夢 
+          .dleam__answer
+            = @profile.dream
+        .comment
+          = simple_format(@profile.comment)
+
+    .follow
+      = render "relationships/follow_button", user: @user
+    - if current_user.id == @user.id
+      .user__edit
+        = link_to "登録情報を編集する", edit_user_registration_path, class: "user__edit__btn"
+      .profile__edit
+        = link_to "プロフィールを編集する", "/users/#{@profile.user_id}/profiles/#{@profile.id}/edit", class: "profile__edit__btn"

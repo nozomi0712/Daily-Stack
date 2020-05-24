@@ -1,0 +1,15 @@
+.header
+  .header__title
+    =link_to "Daily Stack", root_path ,class: :font
+  .header__link
+    %ul.links
+      %li.link
+        =link_to "ストック", root_path ,class: :font
+      %li.link
+        =link_to "日記", "#" ,class: :font
+      %li.link
+        =link_to "ユーザー", users_path ,class: :font
+      %li.link
+        =link_to "#{current_user.nickname}さん", user_path(current_user.id) ,class: :font
+      %li.link
+        =link_to "ログアウト", destroy_user_session_path, method: :delete ,class: :font

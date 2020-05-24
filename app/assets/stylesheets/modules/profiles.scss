@@ -1,0 +1,81 @@
+.profile {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  font-family: serif;
+
+  &__wrapper {
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 1px #00FFCC;
+
+    &__title {
+      font-size: 25px;
+      text-align: center;
+      background-color: $header-color;
+      color: $white;
+      line-height: 50px;
+      margin-bottom: 30px;
+
+      &__sub {
+        padding: 0 20px;
+        line-height: 20px;
+        font-size: 15px;
+        color: rgba($color: #000000, $alpha: 0.7);
+      }
+    }
+
+    &__contents {
+      height: 500px;
+      overflow: scroll;
+
+      #preview {
+        .img__prev {
+          margin: 0 auto;
+          width: 100px;
+          height: 100px;
+          margin-bottom: 20px;
+        }
+      }
+
+      &__image {
+        margin-bottom: 15px;
+      }
+
+      &__elements {
+        margin: 10px auto;
+
+        .tag {
+          margin: 15px auto;
+        }
+
+        .comment__area {
+          width: 330px;
+          height: 100px;
+          resize: none;
+        }
+      }
+
+      .profile__btn {
+        box-sizing: border-box;
+        display: block;
+        text-decoration: none;
+        font-size: 17px;
+        color: black;
+        border-radius: 5px;
+        height: 30px;
+        width: 300px;
+        line-height: 30px;
+        text-align: center;
+        border: solid 1px #0000FF;
+        margin: 30px auto 10px;
+      }
+      .profile__btn:hover{
+        background-color: rgba($color: #00FFCC, $alpha: 0.8);
+        border: none;
+        color: $white;
+      }
+    }
+  }
+}

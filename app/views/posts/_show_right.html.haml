@@ -1,0 +1,25 @@
+.comments
+  .comments__title
+    コメント
+  .comments__wrapper
+    - @comments.each do |comment|
+      .comment{data: {comment: {id: comment.id}}}
+        .comment__person
+          =link_to user_path(comment.user_id) do
+            = image_tag comment.user.profile.image, class:"comment__person__link"
+          .comment__person__data
+            .comment__person__data__name.element
+              = comment.user.nickname
+            .comment__person__data__created.element
+              = comment.created_at.strftime("%Y-%m-%d %H:%M")
+          - if current_user.id == comment.user_id
+            = link_to "削除", "/posts/#{comment.post_id}/comments/#{comment.id}", method: :delete, class:"destroy__btn"
+        .comment__text
+          = simple_format(comment.comments)
+  .comment__form
+    = form_for @comment, url: post_comments_path(@post.id), id: "new_comment" do |f|
+      .show__form_title
+        コメントを投稿する
+        .text__feald_title
+          = f.text_area :comments, placeholder: "90文字以内で記入しよう", class:"text__feald"
+          = f.submit "コメントする", class:"send__btn"

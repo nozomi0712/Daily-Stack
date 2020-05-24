@@ -1,0 +1,29 @@
+.show__wrapper
+  .show__wrapper__person
+    = link_to user_path(@post.user_id) do
+      = image_tag @post.user.profile.image, class: "show__wrapper__person__image"
+    .show__wrapper__person__text
+      .name.element
+        = @post.user.nickname
+      .grade.element
+        = @post.grade
+      .subject.element
+        = @post.subject
+      .created.element
+        = @post.created_at.strftime("%Y-%m-%d %H:%M")
+  .show__wrapper__title
+    = @post.title
+  .show__wrapper__text
+    .show__wrapper__text__contain
+      = safe_join(@post.textn.split("\n"),tag(:br))
+    .post__image
+      - @image.each do |image|
+        = image_tag image.image
+  .show__wrapper__icons
+    .like#like{ id: @post.id }
+      = render "like"
+    .favorite#favorite{id: @post.id}
+      = render "favorite"
+    - if current_user.id == @post.user_id
+      = link_to "編集", "/posts/#{@post.id}/edit", class: "element edit"
+      = link_to "削除", "/posts/#{@post.id}", method: :delete, class: "element destroy"

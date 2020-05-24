@@ -1,0 +1,50 @@
+.users__index
+  - @users.each do |user|
+    = link_to user_path(user.id), class:"user__link" do
+      .user__wrapper
+        = image_tag user.profile.image, class: "user__image"
+        .user__contents
+          .user__contents__first
+            .contents
+              .nickname.element
+                = user.nickname
+              .created.element
+                登録日 :
+                = user.created_at.strftime("%Y-%m-%d")
+              .grade.element
+                学年 : 
+                = user.profile.grade
+              .prefecture.element
+                都道府県 :
+                = user.profile.prefecture
+          .user__contents__second
+            .contents
+              .book.element
+                好きなyoutuber :
+                = user.profile.li_youtuber
+              .food.element
+                好きな食べ物 :
+                = user.profile.li_food
+              .subject.element
+                好きなアニメ :
+                = user.profile.li_anime
+              .book.element
+                好きな本 :
+                = user.profile.li_book
+          .user__contents__therd
+            .contents
+              .subject.element
+                勉強していること : 
+                = user.profile.li_subject
+              .custom.element
+                毎日の習慣 :
+                = user.profile.custom
+              .lesson.element
+                習いごと :
+                = user.profile.lessons
+              .dream.element
+                将来の夢 :
+                = user.profile.dream
+
+          .comment
+            = simple_format(user.profile.comment)

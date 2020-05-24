@@ -1,0 +1,28 @@
+.main__form
+  .main__form__title
+    ストックを投稿する
+  .main__form__contents
+    = form_for @post, id: "new_post" do |f|
+      .grade.element
+        .item__grade.item
+          学年
+        = f.select :grade,["小学１年生","小学2年生","小学3年生","小学4年生","小学5年生","小学6年生","中学1年生","中学2年生","中学3年生"], class: "empty__val"
+      .subject.element
+        .item__subject.item
+          科目
+        = f.text_field :subject, class: "empty__val"
+      .title.element
+        .item__title.item
+          タイトル
+        = f.text_field :title, placeholder: "30文字以内で記入しよう", class: "empty__val"
+      .textn.element
+        .item__textn.item
+          学んだことの説明（わかりやすく説明してみよう！）
+        = f.text_area :textn, placeholder: "200文字以内で記入しよう", class:"text_area empty__val"
+      .file__fields.element
+        = f.fields_for :images do |i|
+          = i.file_field :image, class: "empty__val"
+        = f.fields_for :images do |i|
+          = i.file_field :image, class: "empty__val"
+      .element
+        = f.submit "ストック!", class:"send_btn"

@@ -1,0 +1,24 @@
+.edit__main
+  .main__form
+    .main__form__title
+      ストックを修正する
+    .main__form__contents
+      = form_for @post do |f|
+        %div.grade.element
+          %div.item__grade.item
+            学年
+          = f.select :grade,["小学１年生","小学2年生","小学3年生","小学4年生","小学5年生","小学6年生","中学1年生","中学2年生","中学3年生"]
+        %div.subject.element
+          %div.item__subject.item
+            教科
+          = f.text_field :subject
+        %div.title.element
+          %div.item__title.item
+            タイトル
+          = f.text_field :title, placeholder: "30文字以内で記入しよう"
+        %div.textn.element
+          %div.item__textn.item
+            学んだことの説明（わかりやすく説明してみよう！）
+          = f.text_area :textn, placeholder: "200文字以内で記入しよう", class:"text_area"
+        %div.element
+          = f.submit "修正!", class:"send_btn"

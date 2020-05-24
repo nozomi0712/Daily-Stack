@@ -1,0 +1,19 @@
+.notification {
+  .notice {
+    background-color: $flash_blue;
+    color: $white;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    box-sizing:border-box;
+  }
+
+  .alert {
+    background-color: $alert_orange;
+    color: $white;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    box-sizing:border-box;
+  }
+}

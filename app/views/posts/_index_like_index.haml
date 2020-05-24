@@ -1,0 +1,36 @@
+- @likes.each do |like|
+  .post__card
+    =link_to user_path(like.post.user_id), class:"post__card__picture__link" do
+      .picture
+        = image_tag like.post.user.profile.image, class: "post__user__image"
+    =link_to post_path(like.post.id), class:"post__card__contents" do
+      .post__contents
+        .post__contents__name.element
+          = like.post.user.nickname
+        .post__card__content__grade.element
+          = like.post.grade
+        .post__card__content__subject.element
+          = like.post.subject
+      .post__title
+        = like.post.title
+      .post__under
+        .post__status
+          .follow.icon
+            フォロワー
+          .follow.count
+            = like.post.user.followers.length
+          .like.icon
+            = icon("fas", "heart")
+          .like.count
+            = like.post.likes.length
+          .favorite.icon
+            = icon("fas", "star")
+          .favorite.count
+            = like.post.favorites.length
+          .comment.icon
+            = icon("fas", "comment")
+          .comment.count
+            = like.post.comments.length
+
+        .post__created
+          = like.post.created_at.strftime("%Y-%m-%d %H:%M")

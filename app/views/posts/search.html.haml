@@ -1,0 +1,11 @@
+.main
+  =render "index_side"
+  .main__wrapper
+    .main__wrapper__tab
+      %ul.tabs
+        %li.tab.active
+          検索結果
+
+    %ul.main__wrapper__contents
+      %li.content__index.show__index
+        = render "index_main_index"

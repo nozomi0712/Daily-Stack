@@ -1,0 +1,51 @@
+.main
+  .users__index
+    - @likes.each do |like|
+      = link_to user_path(like.user_id), class:"user__link" do
+        .user__wrapper
+          = image_tag like.user.profile.image, class: "user__image"
+          .user__contents
+            .user__contents__first
+              .contents
+                .nickname.element
+                  = like.user.nickname
+                .created.element
+                  登録日 :
+                  = like.user.created_at.strftime("%Y-%m-%d")
+                .grade.element
+                  学年 : 
+                  = like.user.profile.grade
+                .prefecture.element
+                  都道府県 :
+                  = like.user.profile.prefecture
+            .user__contents__second
+              .contents
+                .book.element
+                  好きなyoutuber :
+                  = like.user.profile.li_youtuber
+                .food.element
+                  好きな食べ物 :
+                  = like.user.profile.li_food
+                .subject.element
+                  好きなアニメ :
+                  = like.user.profile.li_anime
+                .book.element
+                  好きな本 :
+                  = like.user.profile.li_book
+            .user__contents__therd
+              .contents
+                .subject.element
+                  勉強していること : 
+                  = like.user.profile.li_subject
+                .custom.element
+                  毎日の習慣 :
+                  = like.user.profile.custom
+                .lesson.element
+                  習いごと :
+                  = like.user.profile.lessons
+                .dream.element
+                  将来の夢 :
+                  = like.user.profile.dream
+
+            .comment
+              = simple_format(like.user.profile.comment)

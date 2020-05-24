@@ -1,0 +1,23 @@
+- @comments.each do |comment|
+  .post__card
+    =link_to user_path(comment.post.user_id), class:"post__card__picture__link" do
+      .picture
+        = image_tag comment.post.user.profile.image, class: "post__user__image"
+    =link_to post_path(comment.post.id), class:"post__card__contents" do
+      .post__contents
+        .post__contents__name.element
+          = comment.post.user.nickname
+        .post__card__content__grade.element
+          = comment.post.grade
+        .post__card__content__subject.element
+          = comment.post.subject
+      .post__title
+        = comment.post.title
+        //ここ移行の記載に係るCSSはusers.scssに記載
+      .my__comment
+        .my__comment__icon
+          =icon("fas","angle-double-right")
+        .my__comment__content
+          = comment.comments
+      .my__comment__created
+        = comment.created_at.strftime("%Y-%m-%d %H:%M")

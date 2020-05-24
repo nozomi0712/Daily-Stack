@@ -1,0 +1,394 @@
+.main {
+  width: 100vw;
+  height: $view-height;
+  display: flex;
+  padding: 30px 30px 0 30px;
+  box-sizing: border-box;
+  font-family: serif;
+
+  &__form {
+    box-sizing: border-box;
+    width: 30%;
+    height: 620px;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 1px #00FFCC;
+
+    &__title {
+      font-size: 18px;
+      text-align: center;
+      background-color: $header-color;
+      color: $white;
+      line-height: 50px;
+      margin-bottom: 30px;
+    }
+
+    &__contents {
+      font-size: 15px;
+
+      .element {
+        margin-bottom: 20px;
+
+        .item {
+          margin-bottom: 5px;
+        }
+
+        .text_area {
+          font-size: 17px;
+          width: 350px;
+          height: 200px;
+          resize: none;
+        }
+  
+        .send_btn {
+          display: block;
+          margin: 20px auto 0;
+          border-radius: 5%;
+          padding: 10px 30px;
+        }
+
+        .send_btn:hover {
+          background-color: rgba($color: #0099FF, $alpha: 0.5);
+          color: $white;
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    box-sizing: border-box;
+    width: 67%;
+    margin-left: 3%;
+
+    .search {
+      float: right;
+      .search__area {
+        height: 20px;
+        width: 200px;
+      }
+    }
+
+    &__tab {
+      .tabs {
+        display: flex;
+        cursor: pointer;
+        .tab{
+          box-sizing: border-box;
+          border: solid 1px #00FFCC;
+          border-bottom: none;
+          padding: 10px 0;
+          width: 130px;
+          border-radius: 10px 10px 0 0;
+          text-align: center;
+        }
+
+        .active {
+          background-color: $header-color;
+          color: $white;
+        }
+      }
+    }
+    &__contents {
+      box-sizing: border-box;
+      border-radius: 0 10px 10px 10px;
+      border: solid 1px #00FFCC;
+      height: 585px;
+      overflow: scroll;
+      padding: 10px 20px;
+      
+      .content__index{
+        display: none;
+
+        .post__card {
+          box-sizing: border-box;
+          border: $line;
+          border-radius: 3px;
+          margin-bottom: 10px;
+          display: flex;
+
+          &__picture__link {
+            display: block;
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            margin: 10px;
+            text-decoration: none;
+            background-color: rgba($color: #0099FF, $alpha: 0.3);
+            .post__user__image {
+              width: 70px;
+              height: 70px;
+            }
+          }
+
+          &__contents {
+            display: block;
+            width: 100%;
+            text-decoration: none;
+
+            .post__contents {
+              display: flex;
+
+              .element {
+                margin-right: 20px;
+                line-height: 30px;
+              }
+            }
+
+            .post__title {
+              display: inline-block;
+              font-size: 17px;
+              line-height: 30px;
+              font-weight: bold;
+              padding-left: 10px;
+              background: linear-gradient(transparent 60%, #FFCCFF 60%);
+            }
+
+            .post__under {
+              display: flex;
+              justify-content: space-between;
+              padding: 10px 10px 10px 0;
+              .post__status {
+                display: flex;
+                margin-left: 10px;
+                color: $like-color;
+              }
+              .icon {
+                margin-left: 15px;
+              }
+              .count {
+                color: black;
+                margin-left: 5px;
+              }
+
+              .follow {
+                color: black;
+              }
+            }
+          }
+        }
+        .post__card:hover {
+          border: solid 3px rgba($color: #0099FF, $alpha: 0.7) ;
+        }
+      }
+      .show__index {
+        display: block;
+      }
+    }
+  }
+}
+
+.show {
+  width: 100vw;
+  height: $view-height;
+  display: flex;
+  padding: 20px;
+  box-sizing: border-box;
+  
+  &__wrapper {
+    width: 55%;
+    border-radius: 10px;
+    border: solid 1px #00FFCC;
+    padding: 10px 20px;
+    font-size: 17px;
+    font-family: serif;
+    position: relative;
+
+    &__person {
+      display: flex;
+
+      .show__wrapper__person__image {
+        width: 120px;
+        height: 120px;
+        text-align: center;
+        line-height: 120px;
+        background-color: rgba($color: #0099FF, $alpha: 0.3);
+        text-decoration: none;
+      }
+
+      &__text {
+        margin-left: 30px;
+        margin-bottom: 30px;
+
+        .element {
+          line-height: 30px;
+        }
+        .subject {
+          color: red;
+        }
+      }
+    }
+    &__title {
+      font-size: 20px;
+      line-height: 30px;
+      border-bottom: solid 2px #00FFCC;
+    }
+    &__text {
+      overflow: scroll;
+      height: 380px;
+      font-family: 'Georgia';
+
+      &__contain {
+        margin: 20px 0 ;
+      }
+      .post__image {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    &__icons {
+      padding-top: 10px;
+      display: flex;
+      position: absolute;
+      bottom: 20px;
+
+      .element {
+        text-decoration: none;
+        color: black;
+      }
+
+
+        .like {
+          display: flex;
+          margin-right: 5px;
+          color: $like-color;
+        }
+        .unlike {
+          display: flex;
+          margin-right: 5px;
+          color: $unlike-color;
+        }
+
+        .favorite {
+          display: flex;
+          margin: 0 5px;
+          color: $like-color;
+        }
+        .unfavorite {
+          display: flex;
+          margin: 0 5px;
+          color: $unlike-color;
+        }
+
+        .edit {
+          text-decoration: none;
+          color: black;
+          margin-left: 15px;
+        }
+        
+        .destroy {
+                  text-decoration: none;
+        color: black;
+          margin-left: 15px;
+      }
+
+      .count {
+        color: black;
+      }
+    }
+  }
+  .comments {
+    width: 43%;
+    margin-left: 2%;
+    font-family: serif;
+
+    &__title {
+      text-align: center;
+      background-color: rgba($color: #0099FF, $alpha: 0.6);
+      border-radius: 5px;
+      color: $white;
+      font-size: 20px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    &__wrapper {
+      height: 425px;
+      overflow: scroll;
+      .comment {
+        border: $line;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        padding: 10px;
+
+        &__person {
+          display: flex;
+          position: relative;
+
+          &__link {
+            display: block;
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            text-decoration: none;
+            background-color: rgba($color: #0099FF, $alpha: 0.3);
+          }
+
+          &__data {
+            .element {
+              line-height: 30px;
+              margin-left: 10px;
+            }
+          }
+          .destroy__btn {
+            box-sizing: border-box;
+            display: block;
+            width: 50px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            text-decoration: none;
+            color: black;
+            border: solid 1px;
+            position: absolute;
+            right: 0px;
+          }
+          .destroy__btn:hover {
+            border: red;
+            background-color: rgba(#FF0000, 0.5);
+          }
+        }
+        &__text {
+          margin: 30px 0 10px 0;
+          font-size: 16px;
+        }
+      }
+    }
+    .comment__form {
+      border-radius: 10px;
+      border: solid 1px #00FFCC;
+      padding: 10px;
+      margin-top: 15px;
+      .show__form_title {
+        line-height: 30px;
+        font-size: 18px;
+        .text__feald_title {
+          display: flex;
+          .text__feald {
+            height: 80px;
+            width: 350px;
+            resize: none;
+          }
+          .send__btn {
+            display: block;
+            margin: 20px auto 0;
+            border-radius: 5%;
+            height: 50px;
+          }
+          .send__btn:hover {
+            background-color: rgba($color: #0099FF, $alpha: 0.5);
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.edit__main {
+  padding: 30px 30px 0 30px;
+  display: flex;
+  justify-content: center;
+}

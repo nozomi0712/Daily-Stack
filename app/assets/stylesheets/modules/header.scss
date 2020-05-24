@@ -1,0 +1,46 @@
+.header {
+  width: 100vw;
+  height: 70px;
+  background-color: $header-color;
+  display: flex;
+  justify-content: space-between;
+  box-sizing:border-box;
+
+  &__title {
+    margin-left: 50px;
+    font-size: 30px;
+    line-height: 70px;
+    border: none;
+    .font {
+      font-family: serif;
+      text-decoration: none;
+      color: $white;
+    }
+  }
+  &__link {
+    .links {
+      margin-right: 50px;
+      font-size: 18px;
+      display: flex;
+      .link {
+        list-style: none;
+        padding: 0 15px;
+
+        .font {
+          font-family: serif;
+          display: block;
+          text-decoration: none;
+          color: $white;
+          line-height: 70px;
+        }
+      }
+
+      .link:hover {
+        box-sizing: border-box;
+        background-color: rgba($color: #0099FF, $alpha: 0.2);
+        color: $header-color;
+        border-bottom: solid 3px #0099FF;
+      }
+    }
+  }
+}
