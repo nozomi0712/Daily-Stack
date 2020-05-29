@@ -20,9 +20,9 @@
           学んだことの説明（わかりやすく説明してみよう！）
         = f.text_area :textn, placeholder: "200文字以内で記入しよう", class:"text_area empty__val"
       .file__fields.element
-        = f.fields_for :images do |i|
+        = f.fields_for :images, @post.images.build do |i|
           = i.file_field :image, class: "empty__val"
-        = f.fields_for :images do |i|
+        = f.fields_for :images, @post.images.build do |i|
           = i.file_field :image, class: "empty__val"
       .element
         = f.submit "ストック!", class:"send_btn"

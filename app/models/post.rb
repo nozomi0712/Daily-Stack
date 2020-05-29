@@ -6,10 +6,10 @@ class Post < ApplicationRecord
   validates :user_id, presence: true
   
   belongs_to :user
-  has_many :comments
-  has_many :likes
-  has_many :favorites
-  has_many :images
+  has_many :comments,  dependent: :destroy
+  has_many :likes,     dependent: :destroy
+  has_many :favorites, dependent: :destroy
+  has_many :images,    dependent: :destroy
 
   accepts_nested_attributes_for :images, allow_destroy: true
 

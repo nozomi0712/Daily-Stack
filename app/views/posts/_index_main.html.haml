@@ -1,7 +1,7 @@
 .main__wrapper
   .search
     =form_tag "/posts/search", method: :get do
-      = text_field :search, class:"search__area"
+      = search_field :search, class:"search__area"
       = submit_tag "検索", class:"search__btn"
 
   .main__wrapper__tab
