@@ -1,36 +1,40 @@
-- @favorites.each do |favorite|
-  .post__card
-    =link_to user_path(favorite.post.user_id), class:"post__card__picture__link" do
-      .picture
-        = image_tag favorite.post.user.profile.image, class: "post__user__image"
-    =link_to post_path(favorite.post.id), class:"post__card__contents" do
-      .post__contents
-        .post__contents__name.element
-          = favorite.post.user.nickname
-        .post__card__content__grade.element
-          = favorite.post.grade
-        .post__card__content__subject.element
-          = favorite.post.subject
-      .post__title
-        = favorite.post.title
-      .post__under
-        .post__status
-          .follow.icon
-            フォロワー
-          .follow.count
-            = favorite.post.user.followers.length
-          .like.icon
-            = icon("fas", "heart")
-          .like.count
-            = favorite.post.likes.length
-          .favorite.icon
-            = icon("fas", "star")
-          .favorite.count
-            = favorite.post.favorites.length
-          .comment.icon
-            = icon("fas", "comment")
-          .comment.count
-            = favorite.post.comments.length
-
-        .post__created
-          = favorite.post.created_at.strftime("%Y-%m-%d %H:%M")
+-if @favorites.present?
+  - @favorites.each do |favorite|
+    .post__card
+      =link_to user_path(favorite.post.user_id), class:"post__card__picture__link" do
+        .picture
+          = image_tag favorite.post.user.profile.image, class: "post__user__image"
+      =link_to post_path(favorite.post.id), class:"post__card__contents" do
+        .post__contents
+          .post__contents__name.element
+            = favorite.post.user.nickname
+          .post__card__content__grade.element
+            = favorite.post.grade
+          .post__card__content__subject.element
+            = favorite.post.subject
+        .post__title
+          = favorite.post.title
+        .post__under
+          .post__status
+            .follow.icon
+              フォロワー
+            .follow.count
+              = favorite.post.user.followers.length
+            .like.icon
+              = icon("fas", "heart")
+            .like.count
+              = favorite.post.likes.length
+            .favorite.icon
+              = icon("fas", "star")
+            .favorite.count
+              = favorite.post.favorites.length
+            .comment.icon
+              = icon("fas", "comment")
+            .comment.count
+              = favorite.post.comments.length
+          .post__created
+            = favorite.post.created_at.strftime("%Y-%m-%d %H:%M")
+-else
+  = image_tag "notshing1.png", class: "post-nothing"
+  .post-nothing-text
+    該当する投稿がありません。

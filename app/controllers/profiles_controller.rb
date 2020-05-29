@@ -38,13 +38,4 @@ class ProfilesController < ApplicationController
     params.require(:profile).permit(:prefecture, :grade, :li_subject, :li_book, :li_anime, :li_food, :li_youtuber, :lessons, :dream, :custom, :comment, :image).merge(user_id: current_user.id)
   end
 
-  def move_to_index
-    redirect_to root_path unless user_signed_in?
-  end
-
-  def permission_user
-    if @profile.user_id != current_user.id
-      redirect_to root_path
-    end
-  end
 end

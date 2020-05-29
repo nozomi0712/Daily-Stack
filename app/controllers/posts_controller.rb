@@ -25,7 +25,6 @@ class PostsController < ApplicationController
         format.json
       end
     end
-
   end
 
   def show
@@ -67,14 +66,9 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def move_to_index
-    redirect_to action: :index unless user_signed_in?
-  end
-
   def permission_user
     if @post.user_id != current_user.id
       redirect_to action: :index
     end
   end
-
 end
