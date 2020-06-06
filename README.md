@@ -8,7 +8,7 @@
  新しい「発見」を得るきっかけの場を作りたかった。
  
 # DEMO
- "hoge"の魅力が直感的に伝えわるデモ動画や図解を載せる
+ ![dailystack](https://user-images.githubusercontent.com/63894532/83946635-149cf400-a84d-11ea-8281-21d41d06ea2b.gif)
  
 # Features
  制作にあたり、利用者が楽しくサービスを利用できるよう以下の点を意識した。  
@@ -26,25 +26,18 @@
   * 出会い系サイトのような利用を回避するため、  
     DM等１対１でのコミュニケーション機能を実装していない。  
   * また、本人が特定できる写真や名前を投稿しないよう、サービス内で喚起している。
+
+# DataBase
+  <img width="792" alt="ER" src="https://user-images.githubusercontent.com/63894532/83946282-bf5fe300-a84a-11ea-8ebf-c1db786e38ed.png">
  
 # Requirement
- * ruby 2.5.1
+ * ruby 2.5.8
  * Rails 5.0.7.2
  * mysql2 0.5.3
- * devise 4.7.1
- * haml-rails 1.0.0
- * font-awesome-sass 5.4.1
- * carrierwave 2.1.0
- * mini_magick 4.10.1
  
 # Installation
 ```
 $ git clone https://github.com/nozomi0712/Daily-Stack.git
-```
- 
-# Usage
-```
-（仮）サイトのURL→デプロイ後に記載
 ```
  
 # Author 
