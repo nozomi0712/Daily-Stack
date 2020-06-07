@@ -31,7 +31,7 @@
   * また、本人が特定できる写真や名前を投稿しないよう、サービス内で喚起している。
 
 # DataBase
-  <img width="790" alt="ER" src="https://user-images.githubusercontent.com/63894532/83947093-db19b800-a84f-11ea-9c74-ea34b338d0a6.png">
+  <img width="909" alt="ER" src="https://user-images.githubusercontent.com/63894532/83958761-7e021e80-a8b0-11ea-94df-b4661d5d48a7.png">
  
 # Requirement
  * ruby 2.5.8
