@@ -38,9 +38,9 @@
  * Rails 5.0.7.2
  * mysql2 0.5.3
  
-# Installation
+# Application
 ```
-$ git clone https://github.com/nozomi0712/Daily-Stack.git
+https://dailystack.herokuapp.com/
 ```
  
 # Author 
