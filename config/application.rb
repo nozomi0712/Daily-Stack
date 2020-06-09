@@ -16,7 +16,6 @@ module DailyGrowth
       config.i18n.default_locale = :ja
       config.time_zone = 'Tokyo'
     end
+    config.assets.initialize_on_precompile = false
   end
-
-  config.assets.initialize_on_precompile = false
 end
