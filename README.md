@@ -39,9 +39,7 @@
  * mysql2 0.5.3
  
 # Application
-```
-https://dailystack.herokuapp.com/
-```
+[DaylyStackへのリンク](https://dailystack.herokuapp.com/)
  
 # Author 
  * 佐々木希望（男）
