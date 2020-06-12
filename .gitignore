@@ -100,6 +100,4 @@ yarn-debug.log*
 # Local History for Visual Studio Code
 .history/
 
-config/secrets.yml
-
 
