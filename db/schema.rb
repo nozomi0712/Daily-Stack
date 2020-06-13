@@ -31,16 +31,6 @@ ActiveRecord::Schema.define(version: 20200512082616) do
     t.index ["user_id"], name: "index_favorites_on_user_id", using: :btree
   end
 
-  create_table "follows", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id"
-    t.integer  "follow_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["follow_id"], name: "index_follows_on_follow_id", using: :btree
-    t.index ["user_id", "follow_id"], name: "index_follows_on_user_id_and_follow_id", unique: true, using: :btree
-    t.index ["user_id"], name: "index_follows_on_user_id", using: :btree
-  end
-
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "image"
     t.integer  "post_id"
@@ -115,8 +105,6 @@ ActiveRecord::Schema.define(version: 20200512082616) do
   add_foreign_key "comments", "users"
   add_foreign_key "favorites", "posts"
   add_foreign_key "favorites", "users"
-  add_foreign_key "follows", "users"
-  add_foreign_key "follows", "users", column: "follow_id"
   add_foreign_key "images", "posts"
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
