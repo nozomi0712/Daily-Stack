@@ -11,15 +11,13 @@ class PostsController < ApplicationController
   #トップ画面のフォロー一覧を表示
     @follows = Post.set_follow_users(current_user).order(created_at: "DESC")
   #トップ画面のいいね済一覧を表示
-    @likes = Like.where(user_id: current_user.id).order(created_at: "DESC")
+    @likes = current_user.likes.order(created_at: "DESC")
   #トップ画面のお気に入り済一覧を表示
-    @favorites = Favorite.where(user_id: current_user.id).order(created_at: "DESC")
+    @favorites = current_user.favorites.order(created_at: "DESC")
   end
 
   def create
-    @post = Post.create(post_params)
-
-    if @post.save
+    if @post = Post.create(post_params)
       respond_to do |format|
         format.html { redirect_to root_path }
         format.json
