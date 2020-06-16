@@ -6,9 +6,7 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    @profile = Profile.create(profile_params)
-
-    if @profile.save
+    if @profile = Profile.create(profile_params)
       flash[:notice] = "プロフィールを登録しました"
       redirect_to root_path
     else

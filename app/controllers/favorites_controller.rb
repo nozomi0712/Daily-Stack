@@ -4,8 +4,9 @@ class FavoritesController < ApplicationController
   def create
     @favorite = Favorite.create(user_id: current_user.id, post_id: @post.id)
   end
+  
   def destroy
-    @favorite = Favorite.find_by(user_id: current_user.id, post_id: @post.id)
+    @favorite = current_user.favorites.find_by(post_id: @post.id)
     @favorite.destroy
   end
 
