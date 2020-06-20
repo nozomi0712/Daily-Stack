@@ -23,8 +23,8 @@ class Post < ApplicationRecord
   end
 
   def self.search(search)
-    return Post.all unless search
-    Post.where('title LIKE(?)', "%#{search}%")
+    return self.all unless search
+    self.where('title LIKE(?)', "%#{search}%")
   end
 
 end
